@@ -20,26 +20,24 @@ const Footer = () => {
         </div>
 
 
-        {/* Footer content */}
-        <div className="footer-content-right">
-        
-
-          <div className="footer-content">
-            <p className="footer-blurb">
-              Launch our outreach program at your school today!
-            </p>
-            <nav>
-              <ul>
-                <li><Link to="/contact">Contact Us</Link></li>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/services">Services</Link></li>
-              </ul>
-            </nav>
+        <div className="footer-right">
+          <div className="top">
+              <div className="footer-content">
+                <p className="footer-blurb">
+                  Launch our outreach program at your school today!
+                </p>
+                <nav>
+                  <ul> 
+                    <li><Link to="/contact">Contact Us</Link></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About Us</Link></li>
+                    <li><Link to="/services">Services</Link></li>
+                  </ul>
+                </nav> 
+              </div>   
           </div>
-
-          
-          <div className="astronauts">
+          <div className = "bottom">
+            <div className="astronauts">
             {astronautNames.map((name, i) => (
               <div key={i} className="astronaut-wrapper">
                   <img
@@ -50,9 +48,10 @@ const Footer = () => {
                   <span className="tooltip">{name}</span>
                 </div>
               ))}
+            </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   );
 };
