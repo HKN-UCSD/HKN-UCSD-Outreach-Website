@@ -124,9 +124,15 @@ body{
   align-items: center;
 }
 
+@media (max-width: 1200px) {
+  .image {
+    display: none;
+  }
+}
+
 .subsection-image {
   width: 100%;
-  max-width: 500px;  /* You can adjust this width */
+  max-width: 400px;
   height: auto;
   object-fit: cover;
   border-radius: 10px;

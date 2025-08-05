@@ -22,6 +22,13 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(255, 255, 0, 0.6); 
     margin: 0;
   }
+
+  .subsection-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; 
+  }
   
   /* Plus sign */
   .plus-sign {
@@ -48,4 +55,14 @@
 .extra{
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(55, 178, 244, 0.876); 
 
+}
+
+@media (max-width: 600px) {
+  .statistics-container {
+    flex-direction: column;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
 }

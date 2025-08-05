@@ -7,42 +7,52 @@ const astronautNames = [
   "Sarah Tran" , "Charlie Wu", "Sabeel Mansuri", "Joel Bisarra", "Joona Kim",
   "Jim Villani", "Lisa Takai", "Tara Len", "Thomas Rexin", "Katherine Vu",
   "Om Rabadia ", "Tyler Meyers", "Henry Lin", "Alexander Parrish" , "Brandon Nghiem", 
-  "Justin Hernandez", "Ethan Jenkins", "Max Zamorano"
+  "Justin Hernandez", "Ethan Jorkins", "Max Zamorano"
 ];
 
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="moon">
-        <img src={Rocket} alt="rocket" className="rocket" />
-        <div className="astronauts">
-          {astronautNames.map((name, i) => (
-            <div key={i} className="astronaut-wrapper">
-              <img
-                src={Astronaut}
-                alt={`astronaut-${i}`}
-                className="astronaut"
-              />
-              <span className="tooltip">{name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <div className="footer-row">
 
-      {/* Footer content */}
-      <div className="footer-content">
-        <p className="footer-blurb">
-          Launch our outreach program at your school today!
-        </p>
-        <nav>
-          <ul>
-            <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
-          </ul>
-        </nav>
-      </div>
+        <div className="rocket-container-left">
+          <img src={Rocket} alt="rocket" className="rocket" />
+        </div>
+
+
+        {/* Footer content */}
+        <div className="footer-content-right">
+        
+
+          <div className="footer-content">
+            <p className="footer-blurb">
+              Launch our outreach program at your school today!
+            </p>
+            <nav>
+              <ul>
+                <li><Link to="/contact">Contact Us</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/services">Services</Link></li>
+              </ul>
+            </nav>
+          </div>
+
+          
+          <div className="astronauts">
+            {astronautNames.map((name, i) => (
+              <div key={i} className="astronaut-wrapper">
+                  <img
+                    src={Astronaut}
+                    alt={`astronaut-${i}`}
+                    className="astronaut"
+                  />
+                  <span className="tooltip">{name}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+        </div>
     </div>
   );
 };
