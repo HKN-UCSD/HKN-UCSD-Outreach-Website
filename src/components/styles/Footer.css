@@ -1,0 +1,191 @@
+.footer {
+  background-color: black;
+  color: white;
+  padding: 50px 150px 150px 150px;
+  text-align: center;
+  position: relative;
+}
+
+.moon {
+  background-color: black;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+.rocket {
+  height: 300px;
+  object-fit: contain;
+  z-index: 2;
+  padding: 10px;
+  margin-left: 150px; 
+}
+
+.astronauts {
+  display: flex;
+  position: absolute;
+  bottom: 80px;
+  left: 55%; 
+  transform: translateX(-50%);
+  z-index: 3;
+  gap: 2px;
+}
+
+
+.astronaut-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.astronaut {
+  height: 50px;
+  object-fit: contain;
+  cursor: default;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 4px 8px;
+  position: absolute;
+  bottom: 110%; /* position above the astronaut */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+.astronaut-wrapper:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.footer-content {
+  width: 80%;        /* make it narrower */
+  margin: 10px 0 40px 100px; /* top right bottom left */
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+}
+
+.footer-blurb {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(255, 255, 0, 0.707); 
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 40px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.footer-content ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-content ul li a:hover {
+  color: #5FBFF9;
+  text-decoration: none;
+}
+
+/* Responsive Styles */
+
+/* Smaller screens: tablets and below */
+@media (max-width: 992px) {
+  .footer {
+    padding: 40px 60px 100px 60px; /* reduce padding */
+  }
+
+  .rocket {
+    height: 200px;
+    margin-left: 80px; /* reduce left margin */
+    padding: 5px;
+  }
+
+  .astronaut {
+    height: 40px;
+  }
+
+  .footer-content {
+    width: 90%;
+    margin: 10px auto 40px auto; /* center horizontally with smaller margin */
+  }
+
+  .footer-blurb {
+    font-size: 1.4rem;
+  }
+
+  .footer-content ul {
+    gap: 25px;
+    font-size: 1rem;
+    flex-wrap: wrap; /* wrap if no space */
+    justify-content: center;
+  }
+}
+
+/* Small screens: phones */
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 30px 80px 30px;
+  }
+
+  .rocket {
+    height: 150px;
+    margin-left: 40px;
+  }
+
+  .astronaut {
+    height: 30px;
+  }
+
+  .footer-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .footer-blurb {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .footer-content ul {
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1rem;
+  }
+
+  .footer-content ul li {
+    text-align: center;
+  }
+}
+
+/* Hide rocket on very small screens */
+@media (max-width: 480px) {
+  .rocket {
+    display: none;
+  }
+}

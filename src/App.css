@@ -1,0 +1,153 @@
+body{
+  background: linear-gradient(to bottom, #0C142A, #5b5f65);
+  margin: 0;
+  padding: 0;
+}
+.page-container {
+  background: linear-gradient(to bottom, #0C142A, #5b5f65);
+  min-height: 100vh;
+  color: white;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(255, 255, 0, 0.6); 
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #d1d5db;
+}
+
+.highlight {
+  color: #5FBFF9;
+}
+
+.statsIntro{
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gallery-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.gallery {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.statistics-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin: 2rem 0;
+}
+
+.carouselContainer {
+  padding: 2rem 0 4rem 0;
+}
+
+.hrdivider {
+  border: none;
+  border-top: 4px solid #eeeeee;
+  width: 80%;
+  margin: 2rem auto;
+  opacity: 1;
+}
+
+/* Subsection 2 container: centered, 70% width */
+.subsection2 {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 70%; /* Adjust the width to 70% */
+  margin: 0 auto; /* Centers the container horizontally */
+  text-align: center; /* Optional, centers text inside quotes */
+}
+
+/* Row container */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Quote styling */
+.quote {
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+  padding: 3rem 3rem 3rem 3rem;
+  position: relative;
+}
+
+/* Image styling */
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subsection-image {
+  width: 100%;
+  max-width: 500px;  /* You can adjust this width */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Speaker styling: positioned bottom-right */
+.speaker {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #ccc;
+  margin: 0.5rem;
+}
+
+.biqquotes {
+  font-size: 4rem;
+}
+
+.highlight {
+  color: #5FBFF9;
+}

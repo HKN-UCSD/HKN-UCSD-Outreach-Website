@@ -1,0 +1,51 @@
+/* Container for all statistics with vertical lines */
+.statistics-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  /* Each individual statistic */
+  .statistic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  
+  /* Number styling */
+  .statistic-count {
+    font-size: 3rem;
+    color: #5FBFF9;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(255, 255, 0, 0.6); 
+    margin: 0;
+  }
+  
+  /* Plus sign */
+  .plus-sign {
+    color: rgba(236, 203, 97, 0.51);
+    font-size: 2.5rem;
+  }
+  
+  /* Label */
+  .statistic-label {
+    color: white;
+    margin-top: 0.3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Vertical divider between statistics */
+  .vertical-divider {
+    width: 4px;
+    height: calc(5rem * 1.5);
+    color: white;
+    background-color: rgb(255, 255, 255);
+  }
+.extra{
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(55, 178, 244, 0.876); 
+
+}

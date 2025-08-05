@@ -1,0 +1,27 @@
+/* Center the entire gallery container and set a maximum width */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 columns */
+    grid-gap: 2rem; /* Space between images */
+    padding: 2rem 0;
+    max-width: 1200px; /* Adjust the max width as needed */
+    margin: 0 auto; /* Center the gallery container */
+  }
+  
+  /* Individual gallery item */
+  .gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Image styling */
+  .gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;  /* Ensures the images maintain aspect ratio */
+    border-radius: 10px;  /* Optional: adds rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  /* Optional: adds shadow to the images */
+    margin-bottom: 2rem;  /* Adds a gap below each image */
+  }
+  
