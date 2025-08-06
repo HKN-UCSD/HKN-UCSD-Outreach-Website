@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Statistic from "./components/Statistic";
 import StatisticsSection from "./components/StatisticsComponent";
 import Carousel from "./components/Carousel"
 import Gallery from "./components/Gallery";
@@ -28,7 +27,7 @@ export default function HKNOutreachPage() {
       <Navbar />
       <header className="header">
         <h1 className="title">
-          HKN Outreach <span className="highlight">@ UCSD</span>
+          HKN Outreach <span className="highlight"> @UCSD</span>
         </h1>
         <p className="subtitle">
           Empowering the <span className="highlight extra">next generation</span> of engineers
@@ -70,22 +69,19 @@ export default function HKNOutreachPage() {
     </div>
     <div className="quote">
     <p>
-  "Thank you for all the work that we did and all the things that we learned.
-  For example, <span className="highlight">coding</span>, <span className="highlight">engineering</span> and much more.
-  Now <span className="highlight">I really want to go to UCSD</span> when I grow up!"
-</p>
-<p className = "speaker">- Student, 2023</p>
+      "Thank you for all the work that we did and all the things that we learned.
+      For example, <span className="highlight">coding</span>, <span className="highlight">engineering</span> and much more.
+      Now <span className="highlight">I really want to go to UCSD</span> when I grow up!"
+    </p>
+    <p className = "speaker">- Student, 2023</p>
     </div>
    
   </div>
 </div>
 
-
-
-
     <hr className = "hrdivider"/>
       <section className="gallery-section">
-        <h2 className="gallery-title">Gallery</h2>
+        <h1 className="gallery-title">Gallery</h1>
         <Gallery rows={galleryImages} />
       </section>
 
