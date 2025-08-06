@@ -6,22 +6,13 @@
   position: relative;
 }
 
-.footer-row{
+.rocket-container-left {
+  flex: 0 0 auto;
   display: flex;
   justify-content: center;
-  align-items: stretch;
-}
-
-.rocket-container-left {
-  flex: 0 0 10%;
-  max-width: 10%;
-  box-sizing: border-box;
+  align-items: center;
   background-color: transparent;
-  display: flex;               
-  justify-content: center;
-  align-items: stretch;
 }
-
 
 .rocket {
   height: 200px;
@@ -30,13 +21,12 @@
   padding: 10px;
 }
 
-
-
-.footer-right{
-  flex: 0 0 80%;
-  max-width: 80%;
-  box-sizing: border-box;
-  background-color: transparent;
+.astronauts-scroll-wrapper {
+  max-height: 140px;
+  overflow-y: auto;
+  overflow-x: visible;
+  position: relative;
+  padding-top: 1.5rem; /* space for tooltip to not get clipped */
 }
 
 .astronauts {
@@ -45,7 +35,6 @@
   align-items: center;       
   flex-wrap: wrap;                    
 }
-
 
 .astronaut-wrapper {
   position: relative;
@@ -58,8 +47,6 @@
   object-fit: contain;
   cursor: default;
 }
-
-
 
 .tooltip {
   visibility: hidden;
@@ -86,7 +73,12 @@
   opacity: 1;
 }
 
-.footer-content {
+.astronauts-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-upper-row {
   width: 80%;        /* make it narrower */
   margin: 10px auto 40px auto; /* top right bottom left */
   color: white;
@@ -103,7 +95,7 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(255, 255, 0, 0.707); 
 }
 
-.footer-content ul {
+.footer-upper-row ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -113,44 +105,42 @@
   font-weight: 500;
 }
 
-.footer-content ul li a {
+.footer-upper-row ul li a {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-content ul li a:hover {
+.footer-upper-row ul li a:hover {
   color: #5FBFF9;
   text-decoration: none;
 }
 
+.footer-bottom-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 
 /* Responsive Styles */
-
-/* Smaller screens: tablets and below */
+/* Smaller screens: ipad */
 @media (max-width: 1200px) {
   .footer {
     padding: 40px 60px 100px 60px; /* reduce padding */
   }
 
-  .rocket-container-left {
-    display: none;
+  .footer-bottom-row {
+    flex-direction: column;
   }
 
-  .footer-content {
-    width: 90%;
-    margin: 10px auto 40px auto; /* center horizontally with smaller margin */
+  .rocket-container-left {
+    margin-bottom: 1rem;
   }
 
   .footer-blurb {
     font-size: 1.4rem;
-  }
-
-  .footer-content ul {
-    gap: 25px;
-    font-size: 1rem;
-    flex-wrap: wrap; /* wrap if no space */
-    justify-content: center;
   }
 }
 
@@ -160,28 +150,8 @@
     padding: 30px 30px 80px 30px;
   }
 
-
-  .footer-content {
-    width: 100%;
-    margin-left: 0;
-  }
-
   .footer-blurb {
     font-size: 1.1rem;
     padding: 0 10px;
-  }
-
-  .footer-content ul {
-    flex-direction: column;
-    gap: 15px;
-    font-size: 1rem;
-  }
-
-  .footer-content ul li {
-    text-align: center;
-  }
-
-  .astronauts{
-    display: None
   }
 }
