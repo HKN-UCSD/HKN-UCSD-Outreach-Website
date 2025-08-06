@@ -78,3 +78,49 @@
   color: #5FBFF9;
 }
 
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #0C142A;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links a,
+  .contact-button {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    margin-left: 0; /* reset from desktop view */
+  }
+}
