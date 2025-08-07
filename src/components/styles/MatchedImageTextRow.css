@@ -1,6 +1,5 @@
 .matched-row {
   display: flex;
-  align-items: flex-start;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -8,6 +7,8 @@
   padding: 0;
   background: transparent;
   box-shadow: none;
+  align-items: center;   /* vertical alignment */
+  justify-content: center;
 }
 
 .matched-image {
@@ -44,10 +45,4 @@
   margin-top: 0.5rem;
 }
 
-/* Hide image on mobile */
-@media (max-width: 700px) {
-  .matched-image {
-    display: none;
-  }
-}
 
