@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HKNOutreachPage from "./Home"
 import About from "./AboutUs";
+import Services from './components/Services';
 
 function App(){
 return(
@@ -10,8 +11,9 @@ return(
     <Routes>
       <Route path="/" element={<HKNOutreachPage />} />
       <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
       {/* <Route path="/contact" element={<Contact />} />
-      <Route path="/services" element={<Services />} /> */}
+       */}
     </Routes>
   </Router>
 

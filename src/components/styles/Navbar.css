@@ -25,6 +25,7 @@
     transition: color 0.3s ease;
   }
   
+  
   .contact-button {
     margin-left: 1.5rem;
     padding: 0.5rem 1rem;
@@ -52,6 +53,7 @@
   margin-left: 1.5rem;
   transition: color 0.3s ease;
 }
+
 
 /* Hamburger styles */
 .hamburger {
