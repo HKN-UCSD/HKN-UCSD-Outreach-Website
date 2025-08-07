@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import StatisticsSection from "./components/StatisticsComponent";
@@ -37,9 +36,6 @@ export default function HKNOutreachPage() {
       <div className = "carouselContainer">
         <Carousel images={topCarouselImages} />
       </div>
-      
-
-    {/* <p className = "statsIntro">let our <span className = "highlight">numbers</span> do the talking ...</p> */}
 
     <StatisticsSection />
     <hr className = "hrdivider"/>
