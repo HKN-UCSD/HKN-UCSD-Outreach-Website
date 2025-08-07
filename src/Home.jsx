@@ -16,9 +16,9 @@ export default function HKNOutreachPage() {
   ];
 
   const galleryImages = [
-    [land1,land2,land3,],
-    [land4, land1,land2],
-    [land3,land4, land1],
+    land1,land2,land3,
+    land4, land1,land2,
+    land3,land4, land1,
   ];
 
   return (
@@ -78,7 +78,7 @@ export default function HKNOutreachPage() {
     <hr className = "hrdivider"/>
       <section className="gallery-section">
         <h1 className="gallery-title">Gallery</h1>
-        <Gallery rows={galleryImages} />
+        <Gallery images={galleryImages} />
       </section>
 
       <Footer />
