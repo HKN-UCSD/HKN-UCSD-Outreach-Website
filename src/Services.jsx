@@ -1,9 +1,21 @@
 import React from "react";
-import "../App.css"; // reuse styles
-import "./styles/Services.css";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import trident from "../assets/trident.png";
+import "./App.css"; // reuse styles
+import "./Services.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ServiceCard from "./components/ServiceCard"
+import trident from "./assets/trident.png";
+
+const lessonData = [
+  { title: "Computer Science", lesson: "Computer Vision" },
+  { title: "Mechanical Engineering", lesson: "Paper Rockets" },
+  { title: "Electrical Engineering", lesson: "Paper Circuits" }
+];
+
+const tourData = [
+  { title: "UCSD Landmarks", stop: "Geisel" },
+  { title: "UCSD Labs", stop: "RPL" }
+];
 
 export default function Services() {
   return (
@@ -28,16 +40,13 @@ export default function Services() {
           </div>
 
           <div className="timeline-cards">
-            {[
-              { title: "Computer Science", lesson: "Computer Vision" },
-              { title: "Mechanical Engineering", lesson: "Paper Rockets" },
-              { title: "Electrical Engineering", lesson: "Paper Circuits" }
-            ].map((item, index) => (
-              <div key={index} className="timeline-card">
-                <h3>{item.title}</h3>
-                <div className="card-box">{item.lesson}</div>
-                <p className="card-note">Swipe through to see our previous lessons</p>
-              </div>
+            {lessonData.map((item, index) => (
+              <ServiceCard
+                key={index}
+                title={item.title}
+                content={item.lesson}
+                note="Swipe through to see our previous lessons"
+              />
             ))}
           </div>
         </div>
@@ -53,20 +62,17 @@ export default function Services() {
           </div>
 
           <div className="timeline-cards">
-            {[
-              { title: "UCSD Landmarks", stop: "Geisel" },
-              { title: "UCSD Labs", stop: "RPL" }
-            ].map((item, index) => (
-              <div key={index} className="timeline-card">
-                <h3>{item.title}</h3>
-                <div className="card-box">{item.stop}</div>
-                <p className="card-note">Swipe to explore the stops</p>
-              </div>
+            {tourData.map((item, index) => (
+              <ServiceCard
+                key={index}
+                title={item.title}
+                content={item.stop}
+                note="Swipe to explore the stops"
+              />
             ))}
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

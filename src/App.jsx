@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HKNOutreachPage from "./Home"
 import About from "./AboutUs";
-import Services from './components/Services';
+import Services from './Services';
 
 function App(){
 return(
