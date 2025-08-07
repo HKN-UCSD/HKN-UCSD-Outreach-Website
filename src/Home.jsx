@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import StatisticsSection from "./components/StatisticsComponent";
@@ -17,9 +16,9 @@ export default function HKNOutreachPage() {
   ];
 
   const galleryImages = [
-    [land1,land2,land3,],
-    [land4, land1,land2],
-    [land3,land4, land1],
+    land1,land2,land3,
+    land4, land1,land2,
+    land3,land4, land1,
   ];
 
   return (
@@ -37,9 +36,6 @@ export default function HKNOutreachPage() {
       <div className = "carouselContainer">
         <Carousel images={topCarouselImages} />
       </div>
-      
-
-    {/* <p className = "statsIntro">let our <span className = "highlight">numbers</span> do the talking ...</p> */}
 
     <StatisticsSection />
     <hr className = "hrdivider"/>
@@ -82,7 +78,7 @@ export default function HKNOutreachPage() {
     <hr className = "hrdivider"/>
       <section className="gallery-section">
         <h1 className="gallery-title">Gallery</h1>
-        <Gallery rows={galleryImages} />
+        <Gallery images={galleryImages} />
       </section>
 
       <Footer />

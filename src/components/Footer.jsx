@@ -1,8 +1,9 @@
-import Astronaut from "../assets/Astronaut.png"; 
-import Rocket from "../assets/Rocket.png";
-import { Link } from "react-router-dom";
-import "./styles/Footer.css"; 
 
+import './styles/Footer.css'
+import MatchedImageTextRow from "./MatchedImageTextRow";
+import { Link, useLocation } from "react-router-dom";
+import Rocket from "../assets/Rocket.png";
+import Astronaut from "../assets/Astronaut.png"
 const astronautNames = [
   "Sarah Tran" , "Charlie Wu", "Sabeel Mansuri", "Joel Bisarra", "Joona Kim",
   "Jim Villani", "Lisa Takai", "Tara Len", "Thomas Rexin", "Katherine Vu",
@@ -10,26 +11,27 @@ const astronautNames = [
   "Justin Hernandez", "Ethan Jenkins", "Max Zamorano"
 ];
 
-const Footer = () => {
+
+
+export default function App() {
+  const location = useLocation();
+  const currentPath = location.pathname;
   return (
-    <div className="footer">
-      <div className="footer-upper-row">
-        <p className="footer-blurb">
-          Launch our outreach program at your school today!
-        </p>
-        <nav>
-          <ul> 
-            <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
-          </ul>
-        </nav> 
-      </div>
-      <div className="footer-bottom-row">
-        <div className="rocket-container-left">
-          <img src={Rocket} alt="rocket" className="rocket" />
+    <footer className="footer">
+      <div className="containers">
+      
+      {/* Not Possible to match image height to text container height, so I created a seperate component called MatchImageTextRow */}
+      
+        <div className="footer">
+        <MatchedImageTextRow
+          imgSrc={Rocket}
+          alt="Rocket"
+          title="Launch our outreach program at your school today!"
+          body="We bring STEM to underrepresented schools across San Diego."
+        />
         </div>
+
+      {/* Conditional Menu Links */}
         <div className="astronauts-block">
           <div className="astronauts-scroll-wrapper">
             <div className="astronauts">
@@ -47,8 +49,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
-};
-
-export default Footer;
+}

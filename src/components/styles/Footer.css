@@ -1,24 +1,23 @@
-.footer {
-  background-color: black;
-  color: white;
-  padding: 50px 150px 50px 150px;
-  text-align: center;
-  position: relative;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.rocket-container-left {
-  flex: 0 0 auto;
+.footer {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  min-height: 100px;
+  padding: 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+  flex-direction: column;
 }
 
-.rocket {
-  height: 200px;
-  object-fit: contain;
-  z-index: 2;
-  padding: 10px;
+.containers{
+  width: 80%
 }
 
 .astronauts-scroll-wrapper {
@@ -48,6 +47,7 @@
   cursor: default;
 }
 
+
 .tooltip {
   visibility: hidden;
   background-color: #333;
@@ -76,82 +76,4 @@
 .astronauts-block {
   flex: 1;
   min-width: 0;
-}
-
-.footer-upper-row {
-  width: 80%;        /* make it narrower */
-  margin: 10px auto 40px auto; /* top right bottom left */
-  color: white;
-  text-align: center;
-  position: relative;
-  z-index: 4;
-}
-
-.footer-blurb {
-  font-size: 1.7rem;
-  margin-bottom: 20px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 3px 2px 8px rgba(255, 255, 0, 0.707); 
-}
-
-.footer-upper-row ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: inline-flex;
-  gap: 40px;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.footer-upper-row ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-upper-row ul li a:hover {
-  color: #5FBFF9;
-  text-decoration: none;
-}
-
-.footer-bottom-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-/* Responsive Styles */
-/* Smaller screens: ipad */
-@media (max-width: 1200px) {
-  .footer {
-    padding: 40px 60px 100px 60px; /* reduce padding */
-  }
-
-  .footer-bottom-row {
-    flex-direction: column;
-  }
-
-  .rocket-container-left {
-    margin-bottom: 1rem;
-  }
-
-  .footer-blurb {
-    font-size: 1.4rem;
-  }
-}
-
-/* Small screens: phones */
-@media (max-width: 600px) {
-  .footer {
-    padding: 30px 30px 80px 30px;
-  }
-
-  .footer-blurb {
-    font-size: 1.1rem;
-    padding: 0 10px;
-  }
 }
