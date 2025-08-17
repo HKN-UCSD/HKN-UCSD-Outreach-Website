@@ -1,54 +1,199 @@
-body {
-  background: #1b1c1e; /* dark background */
-  color: white;
-  font-family: sans-serif;
+/* Layout: 30% / 70% below heading */
+.services-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.timeline-container {
+/* Left column: 30% */
+.timeline-col {
+  --line-inset: 80%;          /* 80% = 20% in */
   position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 40px 0;
+  flex: 0 0 30%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
+/* Vertical line inset inside the left column */
 .timeline-line {
   position: absolute;
-  left: 50%;
   top: 0;
   bottom: 0;
-  transform: translateX(-50%);
+  left: var(--line-inset);
   width: 4px;
-  background-color: white;
+  background: #fff;
+  z-index: 0;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 60px;
-  padding-left: 60px;
+/* Right column: 70% */
+.content-col {
+  flex: 1 1 70%;
+  box-sizing: border-box;
 }
 
+.content-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.7;
+  max-width: 68ch;
+  margin: 0 auto 3rem;
+  text-align: center;
+  padding: 40px 32px;
+}
+
+/* Yellow timeline dots */
 .timeline-dot {
   position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
-  width: 16px;
-  height: 16px;
-  background-color: #FFC300; /* Yellow dot */
-  border: 2px solid white;
+  left: var(--line-inset);
+  transform: translate(-40%, -40%);
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25), 0 6px 12px rgba(0,0,0,.25);
+  z-index: 3;
 }
 
-.timeline-content {
-  margin-left: 80px;
+/* Trident block */
+.trident-block {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.timeline-content h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
-}
-
-.timeline-content p {
+.trident-title {
   margin: 0;
-  color: #a3d1ff;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #5FBFF9;
+}
+
+.trident-img {
+  width: 100%;                /* full width of the 30% column */
+  max-width: 100%;
+  height: auto;
+  transform: translateX(6%);  /* nudge so the tip meets the line */
+}
+
+.trident-sub {
+  margin: 0;
+  font-size: 1.20rem;
+  color: #fff;
+  opacity: 0.95;
+}
+
+/* Two columns: left=card, right=swipe text; title spans both */
+.service-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 50% / 50% of the section width */
+  column-gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+/* Title spans both columns */
+.service-title {
+  grid-column: 1 / -1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #fff;
+}
+
+.service-card {
+  grid-column: 1;
+  width: 100%;  
+  background: #f3f4f6;   /* light gray for contrast */
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Right column: the swipe text */
+.swipe-text {
+  grid-column: 2;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  align-self: center;
+  text-align: center;
+}
+
+/* Inside service-card */
+/* Clickable image area (button) */
+.service-imageBtn {
+  height: 150px;
+  width: 100%;
+  border: 0;
+  background: #d1d5db;
+  color: #555;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover/focus overlay text */
+.service-imageBtn::after {
+  content: "Preview";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .2s ease, background-color .2s ease;
+  background-color: rgba(0,0,0,0.15);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.service-imageBtn:hover::after,
+.service-imageBtn:focus-visible::after {
+  opacity: 1;
+}
+.service-imageBtn:focus-visible {
+  outline: 3px solid #5FBFF9;
+  outline-offset: 2px;
+}
+
+/* Info area */
+.service-info { 
+  padding: 1rem; 
+  text-align: left; }
+
+  .service-name { 
+  margin: 0; 
+  font-size: 1.2rem; 
+  font-weight: 700; 
+  color: #000; }
+
+/* Stack on small screens */
+@media (max-width: 900px) {
+  .services-layout {
+    flex-direction: column;
+  }
+  .timeline-col {
+    flex-basis: auto;
+  }
+  .timeline-line {
+    left: auto;
+    right: 16px;              /* keep the line visible on mobile */
+  }
+  .service-imageBtn::after {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.25);
+  }
 }
