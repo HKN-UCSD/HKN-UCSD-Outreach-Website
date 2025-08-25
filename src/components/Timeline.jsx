@@ -75,18 +75,7 @@ export default function Timeline(data) {
         </p>
 
         {/* Computer Science */}
-        <div className="service-section">
-          <h3 className="service-title" ref={csTitleRef}>Computer Science</h3>
-          <div className="service-card">
-            <button className="service-imageBtn">Image</button>
-            <div className="service-info">
-              <h4 className="service-name">Computer Vision</h4>
-            </div>
-          </div>
-          <div className="swipe-text">
-            Swipe through to see our previous lessons
-          </div>
-        </div>
+        <ServiceCard text="Computer Science" ref={csTitleRef} content = "Computer Vision" note = "Swipe to see more"/>
 
         {/* Mechanical Engineering */}
         <div className="service-section">
