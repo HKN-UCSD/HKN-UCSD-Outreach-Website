@@ -3,7 +3,19 @@ import "./Services.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";
+import TourTimeline from "./components/TourTimeline";
 
+const lessonData = [
+  { title: "Computer Science", lesson: "Computer Vision" },
+  { title: "Mechanical Engineering", lesson: "Paper Rockets" },
+  { title: "Electrical Engineering", lesson: "Paper Circuits" },
+];
+
+
+const tourData = [
+  { title: "UCSD Landmarks", lesson: "Geisel Library" },
+  { title: "UCSD Labs", lesson: "Rocket Propulsion Labatory" },
+]
 export default function Services() {
 
   return (
@@ -17,7 +29,9 @@ export default function Services() {
         </h1>
       </section>
 
-      <Timeline/>
+      <Timeline lessonData = {lessonData}/>
+
+      <TourTimeline lessonData = {tourData}/>
       <Footer />
     </div>
   );

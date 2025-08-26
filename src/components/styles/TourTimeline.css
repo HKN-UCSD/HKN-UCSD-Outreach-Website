@@ -1,13 +1,13 @@
 /* Layout: 30% / 70% below heading */
-.services-layout {
+.tour-services-layout {
   display: flex;
   min-height: 100vh;
   width: 100%;
 }
 
 /* Left column: 30% */
-.timeline-col {
-  --line-inset: 80%;          /* 80% = 20% in */
+.tour-timeline-col {
+  --line-inset: 20%;          /* 80% = 20% in */
   position: relative;
   flex: 0 0 30%;
   padding: 0 16px;
@@ -23,7 +23,7 @@
 }
 
 /* Vertical line inset inside the left column */
-.timeline-line {
+.tour-timeline-line {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -34,12 +34,12 @@
 }
 
 /* Right column: 70% */
-.content-col {
+.tour-content-col {
   flex: 1 1 70%;
   box-sizing: border-box;
 }
 
-.content-text {
+.tour-content-text {
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.7;
@@ -50,7 +50,7 @@
 }
 
 /* Yellow timeline dots */
-.timeline-dot {
+.tour-timeline-dot {
   position: absolute;
   left: var(--line-inset);
   transform: translate(-40%, -40%);
@@ -63,7 +63,7 @@
 }
 
 /* Trident block */
-.trident-block {
+.tour-trident-block {
   position: relative;
   z-index: 2;
   display: flex;
@@ -71,20 +71,21 @@
   align-items: center;
 }
 
-.trident-title {
+.tour-trident-title {
   margin: 0;
   font-size: 2rem;
   font-weight: 800;
   color: #5FBFF9;
 }
 
-.trident-img {
+.tour-trident-img {
   width: 100%;                /* full width of the 30% column */
   max-width: 100%;
-  height: auto; /* nudge so the tip meets the line */
+  height: auto;
+  transform: scaleX(-1);  /* nudge so the tip meets the line */
 }
 
-.trident-sub {
+.tour-trident-sub {
   margin: 0;
   font-size: 1.20rem;
   color: #fff;
@@ -93,17 +94,17 @@
 
 /* Stack on small screens */
 @media (max-width: 900px) {
-  .services-layout {
+  .tour-services-layout {
     flex-direction: column;
   }
-  .timeline-col {
+  .tour-timeline-col {
     flex-basis: auto;
   }
-  .timeline-line {
+  .tour-timeline-line {
     left: auto;
     right: 16px;              
   }
-  .service-imageBtn::after {
+  .tour-service-imageBtn::after {
     opacity: 1;
     background-color: rgba(0,0,0,0.25);
   }

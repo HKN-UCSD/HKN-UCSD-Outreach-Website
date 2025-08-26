@@ -1,4 +1,4 @@
-import "./styles/Timeline.css";
+import "./styles/TourTimeline.css";
 import ServiceCard from "./ServiceCard";
 import React, {
   useRef,
@@ -11,7 +11,7 @@ import Trident from "../assets/trident.png";
 
 
 
-export default function Timeline({lessonData}) {
+export default function TourTimeline({lessonData}) {
   const [dotY, setDotY] = useState(() => Array(lessonData.length).fill(0));
 
   // Left column ref (positioning frame)
@@ -52,36 +52,20 @@ export default function Timeline({lessonData}) {
   }, []);
 
   return (
-    <div className="services-layout">
+    <div className="tour-services-layout">
       {/* Left column */}
-      <aside className="timeline-col" ref={timelineColRef}>
-        <div className="timeline-line" />
-        {/* Dots aligned to each ServiceCard title */}
-        {dotY.map((y, i) => (
-          <span
-            key={`dot-${i}`}
-            className="timeline-dot"
-            style={{ top: y }}
-            aria-hidden="true"
-          />
-        ))}
+      
 
-        <div className="trident-block">
-          <h1 className="trident-title">Lessons</h1>
-          <img className="trident-img" src={Trident} alt="Trident" />
-          <small className="trident-sub">We come to you</small>
-        </div>
-      </aside>
-
-      {/* Right column */}
-      <main className="content-col">
+      <main className="tour-content-col">
         <p className="content-text">
-          We craft each lesson to fit your students’ needs—explore our tailored
-          resources in
-          <span className="highlight"> Computer Science</span>,
-          <span className="highlight"> Mechanical Engineering</span>, and
-          <span className="highlight"> Electrical Engineering</span> to empower
-          every learner.
+          We design every tour to showcase what matters most to your students—explore 
+          our
+          <span className="highlight"> customized </span>
+          campus experiences, from
+          <span className="highlight"> cutting-edge labs </span>
+          to vibrant
+          <span className="highlight"> student life </span>
+          all designed to inspire future engineers.
         </p>
 
         {lessonData.map(({ title, lesson }, i) => (
@@ -94,6 +78,27 @@ export default function Timeline({lessonData}) {
           />
         ))}
       </main>
+
+
+      {/* Right column */}
+      <aside className="tour-timeline-col" ref={timelineColRef}>
+        <div className="tour-timeline-line" />
+        {/* Dots aligned to each ServiceCard title */}
+        {dotY.map((y, i) => (
+          <span
+            key={`dot-${i}`}
+            className="timeline-dot"
+            style={{ top: y }}
+            aria-hidden="true"
+          />
+        ))}
+
+        <div className="tour-trident-block">
+          <h1 className="tour-trident-title">Tours</h1>
+          <img className="tour-trident-img" src={Trident} alt="Trident" />
+          <small className="tour-trident-sub">You come to us</small>
+        </div>
+      </aside>
     </div>
   );
 }
