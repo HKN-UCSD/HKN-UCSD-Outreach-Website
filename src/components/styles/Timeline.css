@@ -9,7 +9,7 @@
 .timeline-col {
   --line-inset: 80%;          /* 80% = 20% in */
   position: relative;
-  flex: 0 0 30%;
+  flex: 0 0 40%;
   padding: 0 16px;
   box-sizing: border-box;
   background: transparent;
@@ -28,7 +28,7 @@
   top: 0;
   bottom: 0;
   left: var(--line-inset);
-  width: 4px;
+  width: 8px;
   background: #fff;
   z-index: 0;
 }
@@ -54,8 +54,8 @@
   position: absolute;
   left: var(--line-inset);
   transform: translate(-40%, -40%);
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #fbbf24;
   box-shadow: 0 0 0 3px rgba(0,0,0,.25), 0 6px 12px rgba(0,0,0,.25);
@@ -92,7 +92,7 @@
 }
 
 /* Stack on small screens */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .services-layout {
     flex-direction: column;
   }
@@ -100,8 +100,10 @@
     flex-basis: auto;
   }
   .timeline-line {
-    left: auto;
-    right: 16px;              
+    display: none;           
+  }
+  .timeline-dot {
+    display: none;
   }
   .service-imageBtn::after {
     opacity: 1;

@@ -9,7 +9,7 @@
 .tour-timeline-col {
   --line-inset: 20%;          /* 80% = 20% in */
   position: relative;
-  flex: 0 0 30%;
+  flex: 0 0 40%;
   padding: 0 16px;
   box-sizing: border-box;
   background: transparent;
@@ -28,7 +28,7 @@
   top: 0;
   bottom: 0;
   left: var(--line-inset);
-  width: 4px;
+  width: 8px;
   background: #fff;
   z-index: 0;
 }
@@ -49,52 +49,58 @@
   padding: 40px 32px;
 }
 
-/* Yellow timeline dots */
-.tour-timeline-dot {
-  position: absolute;
-  left: var(--line-inset);
-  transform: translate(-40%, -40%);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #fbbf24;
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25), 0 6px 12px rgba(0,0,0,.25);
-  z-index: 3;
-}
 
-/* Trident block */
+/* Container: relative to position overlay text */
 .tour-trident-block {
   position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: min(560px, 90vw); /* scale responsively */
+  margin: 0 auto;
 }
 
-.tour-trident-title {
+/* The trident image as background element */
+.tour-trident-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scaleX(-1);
+}
+
+.tour-trident-sub,
+.tour-trident-cta {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);  /* centers horizontally */
   margin: 0;
-  font-size: 2rem;
-  font-weight: 800;
+  text-align: center;
+  pointer-events: none;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.25);
+}
+
+/* Big top heading */
+.tour-trident-title {
+  top: 6%;                   /* adjust to fit your PNG */
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
   color: #5FBFF9;
 }
 
-.tour-trident-img {
-  width: 100%;                /* full width of the 30% column */
-  max-width: 100%;
-  height: auto;
-
-  transform: scaleX(-1);  /* nudge so the tip meets the line */
-}
-
+/* Mid subheading */
 .tour-trident-sub {
-  margin: 0;
-  font-size: 1.20rem;
+  top: 50%;                  /* middle of the shaft */
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 800;
   color: #fff;
-  opacity: 0.95;
 }
+
+
+@media (max-width: 520px) {
+  .tour-trident-title { top: 8%; }
+  .tour-trident-sub   { top: 52%; }
+}
+
 
 /* Stack on small screens */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .tour-services-layout {
     flex-direction: column;
   }
@@ -102,11 +108,16 @@
     flex-basis: auto;
   }
   .tour-timeline-line {
-    left: auto;
-    right: 16px;              
+    display: none;           
   }
   .tour-service-imageBtn::after {
     opacity: 1;
     background-color: rgba(0,0,0,0.25);
+  }
+  .tour-trident-block {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

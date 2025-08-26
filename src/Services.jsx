@@ -1,3 +1,4 @@
+// Services.jsx
 import "./App.css";
 import "./Services.css";
 import Navbar from "./components/Navbar";
@@ -17,28 +18,32 @@ const lessonData = [
 ];
 
 const tourData = [
-  { title: "UCSD Landmarks", lesson: "Jacobs School of Engineering", image: tourJacobs },
-  { title: "UCSD Labs", lesson: "Rocket Propulsion Laboratory", image: tourRPL },
-]
+  { title: "UCSD Landmarks", lesson: "Geisel Library" },
+  { title: "UCSD Labs", lesson: "Rocket Propulsion Labatory" },
+];
 
 export default function Services() {
-
   return (
     <div className="page-container">
       <Navbar />
 
-      {/* Heading */}
       <section className="header">
         <h1 className="title">
           What <span className="highlight">we</span> do...
         </h1>
       </section>
 
-      <Timeline lessonData = {lessonData}/>
+      {/* NEW: shared wrapper + bridge */}
+      <section className="timelines-joined">
+        <Timeline lessonData={lessonData} />
 
-      <TourTimeline lessonData = {tourData}/>
+        {/* draws the horizontal connector *behind* both timelines */}
+        <div className="timeline-bridge" aria-hidden />
+
+        <TourTimeline lessonData={tourData} />
+      </section>
+
       <Footer />
     </div>
   );
 }
-

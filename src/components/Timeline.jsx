@@ -51,6 +51,7 @@ export default function Timeline({lessonData}) {
   }, []);
 
   return (
+    
     <div className="services-layout">
       {/* Left column */}
       <aside className="timeline-col" ref={timelineColRef}>
