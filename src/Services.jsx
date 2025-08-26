@@ -18,8 +18,8 @@ const lessonData = [
 ];
 
 const tourData = [
-  { title: "UCSD Landmarks", lesson: "Geisel Library" },
-  { title: "UCSD Labs", lesson: "Rocket Propulsion Labatory" },
+  { title: "UCSD Landmarks", lesson: "Geisel Library", image: tourJacobs },
+  { title: "UCSD Labs", lesson: "Rocket Propulsion Laboratory", image: tourRPL },
 ];
 
 export default function Services() {
