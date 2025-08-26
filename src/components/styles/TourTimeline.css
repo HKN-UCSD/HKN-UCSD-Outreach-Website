@@ -9,7 +9,7 @@
 .tour-timeline-col {
   --line-inset: 20%;          /* 80% = 20% in */
   position: relative;
-  flex: 0 0 40%;
+  flex: 0 0 35%;
   padding: 0 16px;
   box-sizing: border-box;
   background: transparent;
@@ -55,6 +55,7 @@
   position: relative;
   width: min(560px, 90vw); /* scale responsively */
   margin: 0 auto;
+  z-index:10;
 }
 
 /* The trident image as background element */
@@ -107,9 +108,7 @@
   .tour-services-layout {
     flex-direction: column;
   }
-  .tour-timeline-col {
-    flex-basis: auto;
-  }
+  
   .tour-timeline-line {
     display: none;           
   }
@@ -122,5 +121,18 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .tour-timeline-col {
+    order: -1;              /* <— moves it above .tour-content-col */
+  }
+
+  /* Let the Trident block participate in normal flow on small screens */
+  .tour-trident-block {
+    position: relative;     /* undo absolute so it doesn’t overlap content */
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 16px auto 0;
   }
 }

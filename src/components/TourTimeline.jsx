@@ -73,8 +73,7 @@ export default function TourTimeline({lessonData}) {
             title={title}
             content={lesson}
             image={image}
-            note="" // optional note next to photo card
-            reverse={true} // smart idea to swop the grids for image box and note box
+            reverse={true}
           />
         ))}
       </main>

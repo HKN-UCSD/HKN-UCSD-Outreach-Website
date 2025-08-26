@@ -15,8 +15,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: calc(32%);          /* slight overdraw to avoid hairline gaps */
-  width: calc((68% - 32%) + 8px); /* span between the two vertical lines */
+  left: calc(28%);          /* slight overdraw to avoid hairline gaps */
+  width: calc((72% - 28%) + 8px); /* span between the two vertical lines */
   height: 8px;
   background: #fff;
   border-radius: 999px;

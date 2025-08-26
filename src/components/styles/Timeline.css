@@ -7,9 +7,9 @@
 
 /* Left column: 30% */
 .timeline-col {
-  --line-inset: 80%;          /* 80% = 20% in */
+  --line-inset: 80%;          
   position: relative;
-  flex: 0 0 40%;
+  flex: 0 0 35%;
   padding: 0 16px;
   box-sizing: border-box;
   background: transparent;
@@ -67,6 +67,7 @@
   position: relative;
   width: min(560px, 90vw); /* scale responsively */
   margin: 0 auto;
+  z-index:10;
 }
 
 /* The trident image as background element */
