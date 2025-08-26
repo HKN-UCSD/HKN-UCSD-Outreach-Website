@@ -10,7 +10,6 @@ import React, {
 import Trident from "../assets/trident.png";
 
 
-
 export default function Timeline({lessonData}) {
   const [dotY, setDotY] = useState(() => Array(lessonData.length).fill(0));
 
@@ -84,13 +83,14 @@ export default function Timeline({lessonData}) {
           every learner.
         </p>
 
-        {lessonData.map(({ title, lesson }, i) => (
+        {lessonData.map(({ title, lesson, image }, i) => (
           <ServiceCard
             key={title}
             ref={titleRefs[i]}
             title={title}
             content={lesson}
-            note="Swipe to see more"
+            image={image}
+            note="" // optional note next to photo card
           />
         ))}
       </main>

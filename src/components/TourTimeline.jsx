@@ -54,8 +54,6 @@ export default function TourTimeline({lessonData}) {
   return (
     <div className="tour-services-layout">
       {/* Left column */}
-      
-
       <main className="tour-content-col">
         <p className="content-text">
           We design every tour to showcase what matters most to your students—explore 
@@ -68,14 +66,15 @@ export default function TourTimeline({lessonData}) {
           all designed to inspire future engineers.
         </p>
 
-        {lessonData.map(({ title, lesson }, i) => (
+        {lessonData.map(({ title, lesson , image}, i) => (
           <ServiceCard
             key={title}
             ref={titleRefs[i]}
             title={title}
             content={lesson}
-            note="Swipe to see more"
-            reverse={true}
+            image={image}
+            note="" // optional note next to photo card
+            reverse={true} // smart idea to swop the grids for image box and note box
           />
         ))}
       </main>

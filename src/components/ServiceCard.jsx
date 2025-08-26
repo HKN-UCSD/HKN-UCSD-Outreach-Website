@@ -2,21 +2,18 @@ import React, { forwardRef } from "react";
 import "./styles/ServiceCard.css";
 
 const ServiceCard = forwardRef(function ServiceCard(
-  { title, content, note, reverse = false },
+  { title, content, note, reverse = false, image },
   ref
 ) {
   return (
     <div className={`service-section ${reverse ? "reverse" : ""}`}>
-      <h3 className="service-title" ref={ref}>
-        {title}
-      </h3>
+      <h3 className="service-title" ref={ref}>{title}</h3>
 
-      {/* Conditionally swap order */}
       {reverse ? (
         <>
           <div className="swipe-text">{note}</div>
           <div className="service-card">
-            <button className="service-imageBtn">Image</button>
+            <img src={image} alt={title} className="service-image" />
             <div className="service-info">
               <h4 className="service-name">{content}</h4>
             </div>
@@ -25,7 +22,7 @@ const ServiceCard = forwardRef(function ServiceCard(
       ) : (
         <>
           <div className="service-card">
-            <button className="service-imageBtn">Image</button>
+            <img src={image} alt={title} className="service-image" />
             <div className="service-info">
               <h4 className="service-name">{content}</h4>
             </div>
