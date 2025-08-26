@@ -62,34 +62,45 @@
   z-index: 3;
 }
 
-/* Trident block */
+/* Container: relative to position overlay text */
 .trident-block {
   position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: min(560px, 90vw); /* scale responsively */
+  margin: 0 auto;
 }
 
-.trident-title {
+/* The trident image as background element */
+.trident-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: -90px; /* adjust value as needed */
+  margin-left: 40px;
+}
+
+.trident-sub{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);  /* centers horizontally */
   margin: 0;
-  font-size: 2rem;
+  text-align: center;
+  pointer-events: none;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.25);
+  top: 50%;                  /* middle of the shaft */
+  font-size: 28px;
   font-weight: 800;
+  color: #fff;
+}
+
+/* Big top heading */
+.trident-title {
+  top: 6%;                   /* adjust to fit your PNG */
+  font-size: 54px; 
+  font-weight: 900;
   color: #5FBFF9;
 }
 
-.trident-img {
-  width: 100%;                /* full width of the 30% column */
-  max-width: 100%;
-  height: auto; /* nudge so the tip meets the line */
-}
-
-.trident-sub {
-  margin: 0;
-  font-size: 1.20rem;
-  color: #fff;
-  opacity: 0.95;
-}
 
 /* Stack on small screens */
 @media (max-width: 1200px) {
@@ -108,5 +119,12 @@
   .service-imageBtn::after {
     opacity: 1;
     background-color: rgba(0,0,0,0.25);
+  }
+}
+
+/* Stack on small screens */
+@media (max-width: 500px) {
+  .trident-sub, .trident-img{
+    display:none;
   }
 }

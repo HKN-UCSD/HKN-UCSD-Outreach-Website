@@ -98,7 +98,6 @@ export default function TourTimeline({lessonData}) {
           <img className="tour-trident-img" src={Trident} alt="Trident" />
           <h1 className="tour-trident-sub">You come to us</h1>
         </div>
-        
       </aside>
     </div>
   );
