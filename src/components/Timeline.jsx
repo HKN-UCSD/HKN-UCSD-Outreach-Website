@@ -69,7 +69,7 @@ export default function Timeline({lessonData}) {
         <div className="trident-block">
           <h1 className="trident-title">Lessons</h1>
           <img className="trident-img" src={Trident} alt="Trident" />
-          <small className="trident-sub">We come to you</small>
+          <h1 className="trident-sub">We come to you</h1>
         </div>
       </aside>
 

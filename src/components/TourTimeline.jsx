@@ -75,6 +75,7 @@ export default function TourTimeline({lessonData}) {
             title={title}
             content={lesson}
             note="Swipe to see more"
+            reverse={true}
           />
         ))}
       </main>
@@ -96,7 +97,7 @@ export default function TourTimeline({lessonData}) {
         <div className="tour-trident-block">
           <h1 className="tour-trident-title">Tours</h1>
           <img className="tour-trident-img" src={Trident} alt="Trident" />
-          <small className="tour-trident-sub">You come to us</small>
+          <h1 className="tour-trident-sub">You come to us</h1>
         </div>
       </aside>
     </div>

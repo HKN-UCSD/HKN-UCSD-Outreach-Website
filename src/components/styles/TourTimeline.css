@@ -82,6 +82,7 @@
   width: 100%;                /* full width of the 30% column */
   max-width: 100%;
   height: auto;
+
   transform: scaleX(-1);  /* nudge so the tip meets the line */
 }
 

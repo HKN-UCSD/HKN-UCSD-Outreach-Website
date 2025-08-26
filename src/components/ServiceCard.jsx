@@ -1,23 +1,38 @@
-import React, {forwardRef} from "react";
-import "./styles/ServiceCard.css"
+import React, { forwardRef } from "react";
+import "./styles/ServiceCard.css";
 
 const ServiceCard = forwardRef(function ServiceCard(
-  { title, content, note },
+  { title, content, note, reverse = false },
   ref
 ) {
-  
   return (
-    <div className="service-section">
+    <div className={`service-section ${reverse ? "reverse" : ""}`}>
       <h3 className="service-title" ref={ref}>
         {title}
       </h3>
-      <div className="service-card">
-        <button className="service-imageBtn">Image</button>
-        <div className="service-info">
-          <h4 className="service-name">{content}</h4>
-        </div>
-      </div>
-      <div className="swipe-text">{note}</div>
+
+      {/* Conditionally swap order */}
+      {reverse ? (
+        <>
+          <div className="swipe-text">{note}</div>
+          <div className="service-card">
+            <button className="service-imageBtn">Image</button>
+            <div className="service-info">
+              <h4 className="service-name">{content}</h4>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="service-card">
+            <button className="service-imageBtn">Image</button>
+            <div className="service-info">
+              <h4 className="service-name">{content}</h4>
+            </div>
+          </div>
+          <div className="swipe-text">{note}</div>
+        </>
+      )}
     </div>
   );
 });

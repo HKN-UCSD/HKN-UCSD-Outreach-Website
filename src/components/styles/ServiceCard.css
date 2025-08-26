@@ -1,23 +1,36 @@
-/* Two columns: left=card, right=swipe text; title spans both */
+/* ServiceCard.css */
 .service-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* 50% / 50% of the section width */
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "card  text";
   column-gap: 1.5rem;
-  align-items: start;
   margin-bottom: 2.5rem;
+}
+
+.service-card.reverse {
+  grid-template-areas:
+    "title title"
+    "text  card";
+}
+
+.service-section.reverse > h3.service-title {
+  text-align: right;
 }
 
 /* Title spans both columns */
 .service-title {
-  grid-column: 1 / -1;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: #fff;
+  grid-area: title;
 }
 
 .service-card {
-  grid-column: 1;
+  grid-area: card;
+  grid-column: auto; 
   width: 100%;  
   background: #f3f4f6;   /* light gray for contrast */
   border-radius: 0.5rem;
@@ -30,12 +43,14 @@
 
 /* Right column: the swipe text */
 .swipe-text {
-  grid-column: 2;
+  grid-area: text;
+  grid-column: auto; 
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
   align-self: center;
   text-align: center;
+  align-self: center; text-align: center;
 }
 
 
