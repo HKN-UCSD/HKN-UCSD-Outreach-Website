@@ -93,9 +93,9 @@ export default function TourTimeline({lessonData}) {
         ))}
 
         <div className="tour-trident-block">
-          <h1 className="tour-trident-title">Tours</h1>
+          <h1 className="trident-title">Tours</h1>
           <img className="tour-trident-img" src={Trident} alt="Trident" />
-          <h1 className="tour-trident-sub">You come to us</h1>
+          <h1 className="trident-sub">You come to us</h1>
         </div>
       </aside>
     </div>

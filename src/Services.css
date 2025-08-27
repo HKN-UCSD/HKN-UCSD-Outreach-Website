@@ -1,28 +1,30 @@
-/* One place to tweak the join height */
 .timelines-joined {
-  --bridge-h: 56px;               /* height of the spacer between components */
-  position: relative;
+  --line-w: 8px;
+  --bridge-h: 56px;
 }
 
-/* the spacer between components */
-.timeline-bridge {
+/* spacer row between the two timelines */
+.timeline-bridge{
   position: relative;
-  height: var(--bridge-h);
+  height: var(--bridge-h, 56px);
+  /* defaults; JS will overwrite */
+  --bridge-left: 0px;
+  --bridge-right: 0px;
+  --bridge-thickness: 8px;
 }
 
-/* the horizontal connector inside the spacer */
-.timeline-bridge::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: calc(28%);          /* slight overdraw to avoid hairline gaps */
-  width: calc((72% - 28%) + 8px); /* span between the two vertical lines */
-  height: 8px;
-  background: #fff;
-  border-radius: 999px;
+.timeline-bridge::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left: calc(var(--bridge-left) - 8px);
+  width: calc(var(--bridge-right) - var(--bridge-left) + 16px);
+  height: var(--bridge-thickness);
+  background:#fff;
+  border-radius:999px;
   transform: translateY(-50%);
-  z-index: 1;
-  pointer-events: none;
+  pointer-events:none;
+  z-index:1;
 }
 
 /* allow the vertical lines to extend beyond their component boxes */
@@ -44,8 +46,19 @@
 }
 
 /* stack case: undo the extensions */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .timelines-joined .timeline-line { bottom: 0; }
   .timelines-joined .tour-timeline-line { top: 0; }
+  .timeline-bridge { width: 100%; }  /* make sure the container spans */
+  .timeline-bridge::before{
+    content: "";                /* ensure it renders */
+    left: 0 !important;
+    width: 100% !important;
+    height: var(--bridge-thickness, 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background: #fff;
+  }
 }
 

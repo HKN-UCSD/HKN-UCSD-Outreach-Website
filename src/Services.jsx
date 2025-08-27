@@ -10,6 +10,7 @@ import maePic from "./assets/mae_wksp.jpg";
 import eePic from "./assets/ee_wksp.jpg";
 import tourJacobs from "./assets/jacobs_tour.png";
 import tourRPL from "./assets/rpl_tour.jpg";
+import {useEffect} from "react";
 
 const lessonData = [
   { title: "Computer Science", lesson: "Game Design", image: csPic },
@@ -23,6 +24,45 @@ const tourData = [
 ];
 
 export default function Services() {
+
+  useEffect(() => {
+    const bridge = document.getElementById("timeline-bridge");
+    const leftLine  = document.querySelector(".timeline-line");           // lessons side
+    const rightLine = document.querySelector(".tour-timeline-line");      // tours side
+    if (!bridge || !leftLine || !rightLine) return;
+
+    const placeBridge = () => {
+      const leftRect   = leftLine.getBoundingClientRect();
+      const rightRect  = rightLine.getBoundingClientRect();
+      const bridgeRect = bridge.getBoundingClientRect();
+
+      // start: right edge of left vertical line
+      const start = (leftRect.left + leftRect.width) - bridgeRect.left;
+      // end: left edge of right vertical line
+      const end   = (rightRect.left) - bridgeRect.left;
+
+      bridge.style.setProperty("--bridge-left",  `${start}px`);
+      bridge.style.setProperty("--bridge-right", `${end}px`);
+    };
+
+    // initial + on resize
+    placeBridge();
+    const ro = new ResizeObserver(placeBridge);
+    ro.observe(leftLine);
+    ro.observe(rightLine);
+    ro.observe(bridge);
+
+    window.addEventListener("resize", placeBridge);
+    window.addEventListener("load", placeBridge);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", placeBridge);
+      window.removeEventListener("load", placeBridge);
+    };
+  }, []);
+
+
   return (
     <div className="page-container">
       <Navbar />
@@ -38,7 +78,7 @@ export default function Services() {
         <Timeline lessonData={lessonData} />
 
         {/* draws the horizontal connector *behind* both timelines */}
-        <div className="timeline-bridge" aria-hidden />
+        <div id="timeline-bridge" className="timeline-bridge" aria-hidden />
 
         <TourTimeline lessonData={tourData} />
       </section>
