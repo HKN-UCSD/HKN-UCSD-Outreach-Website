@@ -21,7 +21,7 @@
 
 /* Title spans both columns */
 .service-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: #fff;
@@ -31,7 +31,7 @@
 .service-card {
   grid-area: card;
   grid-column: auto; 
-  width: 100%;  
+  width: 100%;
   background: #f3f4f6;   /* light gray for contrast */
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -59,6 +59,7 @@
 .service-imageBtn {
   height: 150px;
   width: 100%;
+  aspect-ratio: 16 / 9;
   border: 0;
   background: #d1d5db;
   color: #555;
@@ -93,7 +94,7 @@
 
 /* Info area */
 .service-info { 
-  padding: 1rem; 
+  padding-top: 1rem; 
   text-align: left; }
 
 .service-name { 
