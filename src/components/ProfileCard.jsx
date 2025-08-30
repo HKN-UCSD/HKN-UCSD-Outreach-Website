@@ -4,19 +4,21 @@ import { Mail } from "lucide-react";
 import linkedin from "../assets/linkedin.svg";
 
 const ProfileCard = ({ name, position, email, linkedin: linkedinUrl, isVP }) => {
-  const src = "../assets/profile/";
-  const positionsrc = isVP ? src + "leads/" : src + "chairs/";
-  const imagesrc = positionsrc + name.toLowerCase().replace(/ /g, "") + ".jpeg";
+  const base = import.meta.env.BASE_URL || "/"; // "/" in dev, "/repo-name/" on GH Pages, etc.
+  const prefix = isVP ? "/profile/leads/" : "/profile/chairs/";
+  const imageName = name.toLowerCase().replace(/\s+/g, "") + ".jpeg";
+  const imageSrc = `${base}${prefix}${imageName}`;
 
   return (
     <div className={`profile-card ${isVP ? "" : "sub-team-card"}`}>
       <img
-        src={imagesrc}
+        src={imageSrc}
         alt={`${name}'s profile`}
         className="profile-image"
         onError={(e) => {
-          e.currentTarget.src = src + "panda.jpeg";
+          //e.currentTarget.src = `${base}profile/panda.jpeg`; // fallback in /public/profile/
           e.currentTarget.onerror = null;
+          console.log("Image failed to load:", e.currentTarget.src);
         }}
       />
 
