@@ -23,7 +23,7 @@ import Footer from "./components/Footer";
 
 
 export default function HKNOutreachPage() {
-
+  console.log("BASE_URL is", import.meta.env.BASE_URL);
   const pageImages =[
     land3, land4, land5, land6,
     land8, land9, land10, land11, land12, land13,
