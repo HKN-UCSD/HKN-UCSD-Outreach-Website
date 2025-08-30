@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import "./AboutUs.css"; 
 import ProfileCard from "./components/ProfileCard"
-import google from "./assets/google.png";
 import Footer from "./components/Footer";
 
 
