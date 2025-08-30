@@ -16,7 +16,7 @@ const ProfileCard = ({ name, position, email, linkedin: linkedinUrl, isVP }) => 
         alt={`${name}'s profile`}
         className="profile-image"
         onError={(e) => {
-          //e.currentTarget.src = `${base}profile/panda.jpeg`; // fallback in /public/profile/
+          e.currentTarget.src = `${base}profile/panda.jpeg`; // fallback in /public/profile/
           e.currentTarget.onerror = null;
           console.log("Image failed to load:", e.currentTarget.src);
         }}
