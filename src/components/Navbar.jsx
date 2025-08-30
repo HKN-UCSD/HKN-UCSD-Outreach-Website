@@ -24,12 +24,12 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand home-link Outreach">
-        <a className="navbar-logo-text" href="/">
+        <NavLink to="/" className="navbar-logo-text">
           <span className="navbar-logo">
             <img src={HKNLogo} alt="Logo" />
           </span>
           Outreach
-        </a>
+        </NavLink>
       </div>
 
       {/* Hamburger Icon */}
