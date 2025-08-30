@@ -1,0 +1,113 @@
+/* Layout: 30% / 70% below heading */
+.tour-services-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left column: 30% */
+.tour-timeline-col {
+  --line-inset: 20%;          /* 80% = 20% in */
+  position: relative;
+  flex: 0 0 35%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Vertical line inset inside the left column */
+.tour-timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--line-inset);
+  width: 8px;
+  background: #fff;
+  z-index: 0;
+}
+
+/* Right column: 70% */
+.tour-content-col {
+  flex: 1 1 70%;
+  box-sizing: border-box;
+}
+
+.tour-content-text {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.7;
+  max-width: 68ch;
+  margin: 0 auto 3rem;
+  text-align: center;
+  padding: 40px 32px;
+  
+}
+
+
+/* Container: relative to position overlay text */
+.tour-trident-block {
+  position: relative;
+  width: min(560px, 90vw); /* scale responsively */
+  margin: 0 auto;
+  z-index:10;
+}
+
+/* The trident image as background element */
+.tour-trident-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  transform: scaleX(-1);
+  margin-top: -90px; /* adjust value as needed */
+  margin-left: -30px;
+}
+
+
+@media (max-width: 500px) {
+  .tour-trident-sub, .tour-trident-img{
+    display:none;
+  }
+}
+
+
+/* Stack on small screens */
+@media (max-width: 1200px) {
+  .tour-services-layout {
+    flex-direction: column;
+  }
+  
+  .tour-timeline-line {
+    display: none;           
+  }
+  .tour-service-imageBtn::after {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.25);
+  }
+  .tour-trident-block {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tour-timeline-col {
+    order: -1;              /* <— moves it above .tour-content-col */
+  }
+
+  /* Let the Trident block participate in normal flow on small screens */
+  .tour-trident-block {
+    position: relative;     /* undo absolute so it doesn’t overlap content */
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 16px auto 0;
+  }
+}

@@ -23,8 +23,9 @@ export default function MatchedImageTextRow({ imgSrc, alt, title, body }) {
     <div className="matched-row">
       <div className="matched-text" ref={textRef}>
         <h1>{title}</h1>
-        <p>{body}</p>
-        
+        <p>
+          Reach Us at <a href="mailto:hkn-outreach@ucsd.edu" className="email-link">hkn-outreach@ucsd.edu</a>
+        </p>
       </div>
       <div className="matched-image">
         <img ref={imgRef} src={imgSrc} alt={alt} />

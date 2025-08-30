@@ -7,19 +7,39 @@ import land1 from './assets/land1.jpg';
 import land2 from './assets/land2.jpg';
 import land3 from './assets/land3.jpg';
 import land4 from './assets/land4.jpg';
+import land5 from './assets/land5.jpg';
+import land6 from './assets/land6.jpg';
+import land8 from './assets/land8.jpg';
+import land9 from './assets/land9.jpg';
+import land10 from './assets/land10.jpg';
+import land11 from './assets/land11.jpg';
+import land12 from './assets/land12.jpg';
+import land13 from './assets/land13.jpg';
+import land14 from './assets/land14.jpg';
+import land15 from './assets/land15.jpg';
+import land16 from './assets/land16.jpg';
+import ramsey from './assets/ramsey.jpg';
 import Footer from "./components/Footer";
 
 
 export default function HKNOutreachPage() {
-  const topCarouselImages = [
-   land1,land2,land3,land4
-  ];
+  const pageImages =[
+    land3, land4, land5, land6,
+    land8, land9, land10, land11, land12, land13,
+    land14, land15, land16
+  ]
+  function splitRandomImages(arr, count) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return {
+      selected: shuffled.slice(0, count),
+      leftover: shuffled.slice(count),
+    };
+  }
 
-  const galleryImages = [
-    land1,land2,land3,
-    land4, land1,land2,
-    land3,land4, land1,
-  ];
+  const { selected, leftover } = splitRandomImages(pageImages, 4);
+  const topCarouselImages = [ ...selected, ramsey];
+  const galleryImages = leftover;
+
 
   return (
     <div className="page-container">

@@ -1,0 +1,64 @@
+.timelines-joined {
+  --line-w: 8px;
+  --bridge-h: 56px;
+}
+
+/* spacer row between the two timelines */
+.timeline-bridge{
+  position: relative;
+  height: var(--bridge-h, 56px);
+  /* defaults; JS will overwrite */
+  --bridge-left: 0px;
+  --bridge-right: 0px;
+  --bridge-thickness: 8px;
+}
+
+.timeline-bridge::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left: calc(var(--bridge-left) - 8px);
+  width: calc(var(--bridge-right) - var(--bridge-left) + 16px);
+  height: var(--bridge-thickness);
+  background:#fff;
+  border-radius:999px;
+  transform: translateY(-50%);
+  pointer-events:none;
+  z-index:1;
+}
+
+/* allow the vertical lines to extend beyond their component boxes */
+.timelines-joined .timeline-col,
+.timelines-joined .tour-timeline-col {
+  overflow: visible;              /* was overflow: hidden */
+}
+
+/* extend the FIRST (lessons) vertical line downward into the spacer */
+.timelines-joined .timeline-line {
+  bottom: calc(var(--bridge-h) / -2);   /* pull it down by half the spacer */
+  z-index: 2;
+}
+
+/* extend the SECOND (tours) vertical line upward into the spacer */
+.timelines-joined .tour-timeline-line {
+  top: calc(var(--bridge-h) / -2);      /* pull it up by half the spacer */
+  z-index: 2;
+}
+
+/* stack case: undo the extensions */
+@media (max-width: 1200px) {
+  .timelines-joined .timeline-line { bottom: 0; }
+  .timelines-joined .tour-timeline-line { top: 0; }
+  .timeline-bridge { width: 100%; }  /* make sure the container spans */
+  .timeline-bridge::before{
+    content: "";                /* ensure it renders */
+    left: 0 !important;
+    width: 100% !important;
+    height: var(--bridge-thickness, 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background: #fff;
+  }
+}
+

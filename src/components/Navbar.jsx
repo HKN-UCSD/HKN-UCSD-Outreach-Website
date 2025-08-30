@@ -1,19 +1,35 @@
 import "./styles/Navbar.css";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { NavLink } from "react-router-dom";
 import HKNLogo from "../assets/HKN-Logo-New-Blue.png";
+
+const FORM_URL = "https://forms.gle/VmK7A5yK789ofeEJA";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const openFormWindow = useCallback(() => {
+    const win = window.open(
+      FORM_URL,
+      "hknFormWindow",
+      "width=900,height=700,resizable,scrollbars"
+    );
+    if (!win) {
+      window.location.href = FORM_URL;
+    }
+  }, []);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-brand home-link Outreach">
-        <a className="navbar-logo-text" href="/">
+        <NavLink to="/" className="navbar-logo-text">
           <span className="navbar-logo">
             <img src={HKNLogo} alt="Logo" />
           </span>
           Outreach
-        </a>
+        </NavLink>
       </div>
 
       {/* Hamburger Icon */}
@@ -28,9 +44,11 @@ const Navbar = () => {
 
       {/* Responsive links */}
       <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <a href="/about">About Us</a>
-        <a href="/services">Services</a>
-        <button className="contact-button">Contact</button>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/services">Services</NavLink>
+        <button className="contact-button" onClick={() => { closeMenu(); openFormWindow(); }}>
+          Contact
+        </button>
       </div>
     </nav>
   );

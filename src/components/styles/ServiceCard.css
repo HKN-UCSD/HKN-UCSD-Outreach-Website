@@ -1,0 +1,123 @@
+/* ServiceCard.css */
+.service-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "card  text";
+  padding: 0 1rem;
+  column-gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.service-card.reverse {
+  grid-template-areas:
+    "title title"
+    "text  card";
+}
+
+.service-section.reverse > h3.service-title {
+  text-align: right;
+}
+
+/* Title spans both columns */
+.service-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #fff;
+  grid-area: title;
+}
+
+.service-card {
+  grid-area: card;
+  grid-column: auto; 
+  width: 100%;
+  background: #f3f4f6;   /* light gray for contrast */
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Right column: the swipe text */
+.swipe-text {
+  grid-area: text;
+  grid-column: auto; 
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  align-self: center;
+  text-align: center;
+  align-self: center; text-align: center;
+}
+
+/* Inside service-card */
+/* Clickable image area (button) */
+.service-imageBtn {
+  height: 150px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #d1d5db;
+  color: #555;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover/focus overlay text */
+.service-imageBtn::after {
+  content: "Preview";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .2s ease, background-color .2s ease;
+  background-color: rgba(0,0,0,0.15);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.service-imageBtn:hover::after,
+.service-imageBtn:focus-visible::after {
+  opacity: 1;
+}
+.service-imageBtn:focus-visible {
+  outline: 3px solid #5FBFF9;
+  outline-offset: 2px;
+}
+
+/* Info area */
+.service-info { 
+  padding-top: 1rem; 
+  text-align: left; }
+
+.service-name { 
+  margin: 0; 
+  font-size: 1.2rem; 
+  font-weight: 700; 
+  color: #000; }
+
+/* Mobile view: stack vertically */
+@media (max-width: 480px) {
+  .service-section {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "card"
+      "text";
+    row-gap: 1rem; /* add some spacing between stacked items */
+  }
+}  
+
+@media (max-width: 480px) {
+  .service-title {
+    text-align: center;
+  }
+}
+
