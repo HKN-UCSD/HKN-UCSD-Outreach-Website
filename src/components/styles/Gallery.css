@@ -4,7 +4,7 @@
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* wider thumbnails */
   gap: 2rem;
   padding: 2rem;
-  max-width: 1600px;  /* increased width */
+  max-width: 1400px;  /* increased width */
   margin: 0 auto;
   box-sizing: border-box; 
 }
@@ -67,4 +67,10 @@
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
   cursor: zoom-out;
+}
+
+@media (max-width: 1300px) {
+  .gallery-item:nth-child(n + 9) {
+    display: none; /* hides item 9 and onward */
+  }
 }

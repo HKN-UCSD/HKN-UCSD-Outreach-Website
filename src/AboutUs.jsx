@@ -20,7 +20,7 @@ export default function AboutUs() {
                 </p>
             </div>
 
-             <h1 className = "sub-team">Reach Us at <span className = "highlight">hkn-outreach@ucsd.edu</span></h1>
+             <h1 className = "sub-team">We bring STEM to <span className = "highlight"> underrepresented schools </span>across San Diego.</h1>
              <hr className = "hrdivider"/>
 
             <div className = "team">
