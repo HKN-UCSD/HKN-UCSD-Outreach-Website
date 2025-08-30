@@ -1,6 +1,6 @@
 import "./styles/Navbar.css";
 import React, { useState, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import HKNLogo from "../assets/HKN-Logo-New-Blue.png";
 
 const FORM_URL = "https://forms.gle/VmK7A5yK789ofeEJA";
