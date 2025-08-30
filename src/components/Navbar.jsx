@@ -44,8 +44,8 @@ const Navbar = () => {
 
       {/* Responsive links */}
       <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <Link to="/about">About</Link>
-        <Link to="/services">Services</Link>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/services">Services</NavLink>
         <button className="contact-button" onClick={() => { closeMenu(); openFormWindow(); }}>
           Contact
         </button>
