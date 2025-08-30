@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 import linkedin from "../assets/linkedin.svg";
 
 const ProfileCard = ({ name, position, email, linkedin: linkedinUrl, isVP }) => {
-  const src = "..assets/profile/";
+  const src = "../assets/profile/";
   const positionsrc = isVP ? src + "leads/" : src + "chairs/";
   const imagesrc = positionsrc + name.toLowerCase().replace(/ /g, "") + ".jpeg";
 
