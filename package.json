@@ -1,5 +1,6 @@
 {
   "name": "hkn-outreach-website",
+  "home": "https://HKN-UCSD.github.io/HKN-UCSD-Outreach-Website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,10 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.511.0",
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
