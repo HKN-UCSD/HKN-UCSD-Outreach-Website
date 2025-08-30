@@ -3,9 +3,9 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import "./AboutUs.css"; 
 import ProfileCard from "./components/ProfileCard"
-import panda from "./assets/panda.jpg";
 import google from "./assets/google.png";
 import Footer from "./components/Footer";
+
 
 export default function AboutUs() {
 
@@ -19,94 +19,97 @@ export default function AboutUs() {
                 We are a Student-led outreach program aimed to <span className = "highlight"> teach engineering </span>to <span className = "highlight">socioeconomically disadvantaged </span> K-12 students in the San Diego Area. We teach lessons on <span className = "highlight">mechanical engineering, electrical engineering,  computer science, </span> and a project. The objective is to engage college students in the community and help bring engineering to the next generation, filling the current gap in sciences in K-12 education. 
                 </p>
             </div>
+
+             <h1 className = "sub-team">Reach Us at <span className = "highlight">hkn-outreach@ucsd.edu</span></h1>
              <hr className = "hrdivider"/>
 
             <div className = "team">
-                <h1 className = "our-team">Meet Our Team</h1>
-
+                <h1 className = "sub-team">Our Outreach <span className = "highlight">Leads</span></h1>
                 <div className = "roles">
                     <ProfileCard
-                    name="Om Rabadia"
+                    name="Karina
+                    Zambani"
                     position="VP of Professional Outreach"
-                    profileImage={panda}
-                    email="orabadia@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/omrabadia/"
+                    email="kzambani@ucsd.edu"
+                    linkedin=""
                     isVP = {true}
                     />
 
                     <ProfileCard
-                    name="Tyler Meyers"
+                    name="Collin
+                    Whamsley"
                     position="VP of Academic Outreach"
-                    profileImage={panda}
-                    email="tlmeyers@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/tyler-meyers-34ab7b252/"
+                    email="cowalmsley@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/collin-walmsley/"
                     isVP = {true}
                     />
                 </div>
 
-                <h1 className = "sub-team">Our <span className = "highlight">Lesson</span> Leads</h1>
+                <h1 className = "sub-team">Our Outreach <span className = "highlight">Chairs</span></h1>
+
                 <div className = "roles">
+                    
                     <ProfileCard
-                    name="Brandon Nghiem"
-                    position="CSE Outreach Lead"
-                    profileImage={panda}
-                    email="bnghiem@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/brandon-nghiem/"
+                    name="Lucas
+                    Javier"
+                    position="Professional Outreach"
+                    email="lujavier@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/lucasjavier1/"
                     isVP = {false}
                     />
 
                     <ProfileCard
-                    name="Collin Walmsley"
-                    position="ECE Outreach Lead"
-                    profileImage={panda}
-                    email=""
-                    linkedin=""
+                    name="Esther
+                    Chung"
+                    position="Professional Outreach"
+                    email="esc005@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/estherchung1/"
                     isVP = {false}
                     />
 
                     <ProfileCard
-                    name="Max Zamorano"
-                    position="MAE Outreach Lead"
-                    profileImage={panda}
-                    email=""
-                    linkedin=""
+                    name="Bianca
+                    Grunbaum"
+                    position="Professional Outreach"
+                    email="bgrunbaum@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/biancagrunbaum/"
+                    isVP = {false}
+                    />
+
+                    <ProfileCard
+                    name="Amrit
+                    Chahal"
+                    position="ECE Outreach"
+                    email="amchahal@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/amrit-chahal-455a3b243/"
+                    isVP = {false}
+                    />
+
+                    <ProfileCard
+                    name="Andrew
+                    Jeter"
+                    position="CSE Outreach"
+                    email="ajeter@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/andrewcjeter/"
+                    isVP = {false}
+                    />
+
+                    <ProfileCard
+                    name="Sara
+                    Chowdhury"
+                    position="MAE Outreach"
+                    email="stchowdhury@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/sara-chowdhury-stc101/"
                     isVP = {false}
                     />
                 </div>
 
-                <h1 className = "sub-team">Our <span className = "highlight">Tour</span> Leads</h1>
-                <div className = "roles">
-                    <ProfileCard
-                    name="Justin Hernandez"
-                    position="Tour Lead"
-                    profileImage={panda}
-                    email=""
-                    linkedin=""
-                    isVP = {false}
-                    />
-
-                    <ProfileCard
-                    name="Karina Zambani"
-                    position="Tour Lead"
-                    profileImage={panda}
-                    email=""
-                    linkedin=""
-                    isVP = {false}
-                    />
-
-                    <ProfileCard
-                    name="Lucas Javier"
-                    position="Tour Lead"
-                    profileImage={panda}
-                    email=""
-                    linkedin=""
-                    isVP = {false}
-                    />
-                </div>
+               
             </div>
 
+            {/*
             <hr className = "hrdivider"/>
-
+            
             <div className = "sponsors">
                 <h1 className = "our-sponsors">Check out our wonderful <span className ="highlight">Sponsors </span> & <span className = "highlight">Partners </span></h1>
                 <p className = "sponsor-text">We are proud to be working with the following organizations:</p>
@@ -122,7 +125,7 @@ export default function AboutUs() {
                     <img src={google} alt="Sponsor 3" className="sponsor-logo" />
                 </div>
             </div>
-           
+            */}
            <Footer />
         </div>
         
