@@ -41,7 +41,7 @@ export default function HKNOutreachPage() {
   }
 
   const { selected, leftover } = splitRandomImages(pageImages, 4);
-  const topCarouselImages = [ ramsey ,...selected];
+  const topCarouselImages = [ ...selected, ramsey];
   const galleryImages = leftover;
 
 
