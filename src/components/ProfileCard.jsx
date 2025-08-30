@@ -4,25 +4,41 @@ import "./styles/ProfileCard.css";
 import { Mail } from "lucide-react";
 import linkedin from "../assets/linkedin.svg";
 
-// Build a map of all profile images at build time
-const PROFILE_IMAGES = import.meta.glob(
-  "../assets/profile/**/*.{png,jpg,jpeg}",
+// Bundle all images in profile/ at build time
+const RAW_IMAGES = import.meta.glob(
+  "../assets/profile/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,webp,WEBP}",
   { eager: true, as: "url" }
 );
 
-const slugify = (s) => s.toLowerCase().replace(/\s+/g, "");
+// Build an index like: "leads/karinazambani" -> URL
+const PROFILE_INDEX = {};
+const FALLBACK_URL = RAW_IMAGES["../assets/profile/panda.jpeg"];
+
+for (const p in RAW_IMAGES) {
+  const m = p.match(/\.\.\/assets\/profile\/(leads|chairs)\/([^/]+)\.(png|jpe?g|webp)$/i);
+  if (m) {
+    const dir = m[1].toLowerCase();
+    const base = m[2].toLowerCase();
+    PROFILE_INDEX[`${dir}/${base}`] = RAW_IMAGES[p];
+  }
+}
+
+const slugify = (s) =>
+  s
+    .trim()
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "");
 
 function resolveProfileUrl(name, isVP) {
   const dir = isVP ? "leads" : "chairs";
-  const base = `../assets/profile/${dir}/${slugify(name)}`;
-
-  // Try common extensions in order
-  return (
-    PROFILE_IMAGES[`${base}.jpeg`] ||
-    PROFILE_IMAGES[`${base}.jpg`]  ||
-    PROFILE_IMAGES[`${base}.png`]  ||
-    PROFILE_IMAGES["../assets/profile/panda.jpeg"] // fallback
-  );
+  const key = `${dir}/${slugify(name)}`;
+  const url = PROFILE_INDEX[key] || FALLBACK_URL;
+  if (import.meta.env.DEV && !PROFILE_INDEX[key]) {
+    console.warn(`[ProfileCard] Missing photo for "${name}" (${key}). Using fallback.`);
+  }
+  return url;
 }
 
 export default function ProfileCard({ name, position, email, linkedin: linkedinUrl, isVP }) {
