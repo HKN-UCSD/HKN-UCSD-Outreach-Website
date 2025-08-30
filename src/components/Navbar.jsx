@@ -1,5 +1,6 @@
 import "./styles/Navbar.css";
 import React, { useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import HKNLogo from "../assets/HKN-Logo-New-Blue.png";
 
 const FORM_URL = "https://forms.gle/VmK7A5yK789ofeEJA";
@@ -43,8 +44,8 @@ const Navbar = () => {
 
       {/* Responsive links */}
       <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <a href="/about">About Us</a>
-        <a href="/services">Services</a>
+        <Link to="/about">About</Link>
+        <Link to="/services">Services</Link>
         <button className="contact-button" onClick={() => { closeMenu(); openFormWindow(); }}>
           Contact
         </button>
