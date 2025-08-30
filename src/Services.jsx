@@ -8,7 +8,7 @@ import TourTimeline from "./components/TourTimeline";
 import csPic from "./assets/cs_wksp.jpg";
 import maePic from "./assets/mae_wksp.jpg";
 import eePic from "./assets/ee_wksp.jpg";
-import tourJacobs from "./assets/jacobs_tour.png";
+import tourGiesel from "./assets/gs_tour.jpg";
 import tourRPL from "./assets/rpl_tour.jpg";
 import {useEffect} from "react";
 
@@ -19,7 +19,7 @@ const lessonData = [
 ];
 
 const tourData = [
-  { title: "UCSD Landmarks", lesson: "Geisel Library", image: tourJacobs },
+  { title: "UCSD Landmarks", lesson: "Geisel Library", image: tourGiesel },
   { title: "UCSD Labs", lesson: "Rocket Propulsion Laboratory", image: tourRPL },
 ];
 

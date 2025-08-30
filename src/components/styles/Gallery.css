@@ -1,14 +1,13 @@
 /* Center the entire gallery container and set a maximum width */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* wider thumbnails */
   gap: 2rem;
-  padding: 2rem 2rem;
-  max-width: 1200px;
+  padding: 2rem;
+  max-width: 1600px;  /* increased width */
   margin: 0 auto;
   box-sizing: border-box; 
 }
-
 @media (max-width: 700px) {
   .gallery {
     grid-template-columns: 1fr;
@@ -24,10 +23,48 @@
   /* Image styling */
   .gallery-image {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;  /* Ensures the images maintain aspect ratio */
     border-radius: 10px;  /* Optional: adds rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  /* Optional: adds shadow to the images */
     margin-bottom: 2rem;  /* Adds a gap below each image */
   }
-  
+
+/* Make each item a button so it’s keyboard-focusable/clickable */
+.gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+
+/* --- Lightbox overlay --- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.9); /* gray/transparent backdrop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  /* subtle fade-in */
+  animation: lb-fade 120ms ease-out;
+}
+
+@keyframes lb-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  cursor: zoom-out;
+}

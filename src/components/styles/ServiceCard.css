@@ -53,43 +53,11 @@
   align-self: center; text-align: center;
 }
 
-
-/* Inside service-card */
-/* Clickable image area (button) */
-.service-imageBtn {
-  height: 150px;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  background: #d1d5db;
-  color: #555;
-  font-weight: 700;
-  cursor: pointer;
-  position: relative;
-}
-
-/* Hover/focus overlay text */
-.service-imageBtn::after {
-  content: "Preview";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity .2s ease, background-color .2s ease;
-  background-color: rgba(0,0,0,0.15);
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-.service-imageBtn:hover::after,
-.service-imageBtn:focus-visible::after {
-  opacity: 1;
-}
-.service-imageBtn:focus-visible {
-  outline: 3px solid #5FBFF9;
-  outline-offset: 2px;
+.service-image{
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 /* Info area */
