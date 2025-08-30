@@ -10,7 +10,6 @@ import land4 from './assets/land4.jpg';
 import land5 from './assets/land5.jpg';
 import land6 from './assets/land6.jpg';
 import land8 from './assets/land8.jpg';
-import land9 from './assets/land9.jpg';
 import land10 from './assets/land10.jpg';
 import land11 from './assets/land11.jpg';
 import land12 from './assets/land12.jpg';
@@ -19,9 +18,6 @@ import land14 from './assets/land14.jpg';
 import land15 from './assets/land15.jpg';
 import land16 from './assets/land16.jpg';
 import ramsey from './assets/ramsey.jpg';
-
-
-
 import Footer from "./components/Footer";
 
 
@@ -29,7 +25,7 @@ export default function HKNOutreachPage() {
 
   const pageImages =[
     land3, land4, land5, land6,
-    land8, land9, land10, land11, land12, land13,
+    land8, land10, land11, land12, land13,
     land14, land15, land16
   ]
   function splitRandomImages(arr, count) {

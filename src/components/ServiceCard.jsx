@@ -11,7 +11,9 @@ const ServiceCard = forwardRef(function ServiceCard(
 
       {reverse ? (
         <>
-          <div className="swipe-text">{note}</div>
+          <div className="swipe-text">{note}
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit.</p>
+          </div>
           <div className="service-card">
             <img src={image} alt={title} className="service-image" />
             <div className="service-info">
@@ -27,7 +29,9 @@ const ServiceCard = forwardRef(function ServiceCard(
               <h4 className="service-name">{content}</h4>
             </div>
           </div>
-          <div className="swipe-text">{note}</div>
+          <div className="swipe-text">{note}
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit.</p>
+          </div>
         </>
       )}
     </div>
