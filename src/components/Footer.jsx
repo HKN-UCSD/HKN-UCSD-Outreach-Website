@@ -27,7 +27,7 @@ export default function App() {
           imgSrc={Rocket}
           alt="Rocket"
           title="Launch our outreach program at your school today!"
-          body="Reach Us at hkn-outreach@ucsd.edu"
+          body="Reach us at hkn-outreach@ucsd.edu"
         />
         </div>
 

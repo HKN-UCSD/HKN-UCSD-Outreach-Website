@@ -13,14 +13,24 @@ import tourRPL from "./assets/rpl_tour.jpg";
 import {useEffect} from "react";
 
 const lessonData = [
-  { title: "Computer Science", lesson: "Game Design", image: csPic },
-  { title: "Mechanical Engineering", lesson: "Robotic Arm Car", image: maePic },
-  { title: "Electrical Engineering", lesson: "Buzzer Circuit Game", image: eePic },
+  { title: "Computer Science", lesson: "Game Design", image: csPic,
+        description: "Students learn the fundamentals of interactive design and logic while building their own games."
+   },
+  { title: "Mechanical Engineering", lesson: "Robotic Arm Car", image: maePic,
+        description: "Students use a motion sensor to detect a goal. Points between two players are kept count on an LED display. The car travels over the table after each point."
+   },
+  { title: "Electrical Engineering", lesson: "Buzzer Circuit Game", image: eePic,
+        description: "Students attempt a recreation of the Operation game, using colored lights and sound to signal “harm” to the patient."
+   },
 ];
 
 const tourData = [
-  { title: "UCSD Landmarks", lesson: "Jacobs School of Engineering", image: tourJacobs },
-  { title: "UCSD Labs", lesson: "Rocket Propulsion Laboratory", image: tourRPL },
+  { title: "UCSD Landmarks", lesson: "Jacobs School of Engineering", image: tourJacobs,
+          description: "A guided tour at UCSD’s engineering building and the Fallen Star."
+  },
+  { title: "UCSD Labs", lesson: "Rocket Propulsion Laboratory", image: tourRPL,
+          description: "A tour at a student organization laboratory on campus."
+  },
 ];
 
 export default function Services() {

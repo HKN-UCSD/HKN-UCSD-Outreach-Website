@@ -84,14 +84,14 @@ export default function Timeline({lessonData}) {
           every learner.
         </p>
 
-        {lessonData.map(({ title, lesson, image }, i) => (
+        {lessonData.map(({ title, lesson, image, description }, i) => (
           <ServiceCard
             key={title}
             ref={titleRefs[i]}
             title={title}
             content={lesson}
             image={image}
-            note="" // optional note next to photo card
+            description={description}
           />
         ))}
       </main>

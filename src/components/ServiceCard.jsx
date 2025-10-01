@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import "./styles/ServiceCard.css";
 
 const ServiceCard = forwardRef(function ServiceCard(
-  { title, content, note, reverse = false, image },
+  { title, content, note, reverse = false, image, description },
   ref
 ) {
   return (
@@ -12,7 +12,7 @@ const ServiceCard = forwardRef(function ServiceCard(
       {reverse ? (
         <>
           <div className="swipe-text">{note}
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit.</p>
+            <p>{description}</p>
           </div>
           <div className="service-card">
             <img src={image} alt={title} className="service-image" />
@@ -30,7 +30,7 @@ const ServiceCard = forwardRef(function ServiceCard(
             </div>
           </div>
           <div className="swipe-text">{note}
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit.</p>
+            <p>{description}</p>
           </div>
         </>
       )}
