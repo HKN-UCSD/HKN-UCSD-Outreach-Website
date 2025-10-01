@@ -66,7 +66,7 @@ export default function TourTimeline({lessonData}) {
           all designed to inspire future engineers.
         </p>
 
-        {lessonData.map(({ title, lesson , image}, i) => (
+        {lessonData.map(({ title, lesson , image, description}, i) => (
           <ServiceCard
             key={title}
             ref={titleRefs[i]}
@@ -74,6 +74,7 @@ export default function TourTimeline({lessonData}) {
             content={lesson}
             image={image}
             reverse={true}
+            description={description}
           />
         ))}
       </main>
