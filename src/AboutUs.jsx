@@ -106,25 +106,6 @@ export default function AboutUs() {
                
             </div>
 
-            {/*
-            <hr className = "hrdivider"/>
-            
-            <div className = "sponsors">
-                <h1 className = "our-sponsors">Check out our wonderful <span className ="highlight">Sponsors </span> & <span className = "highlight">Partners </span></h1>
-                <p className = "sponsor-text">We are proud to be working with the following organizations:</p>
-                <div className = "sponsor-logos">
-                    <img src={google} alt="Sponsor 1" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 2" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 3" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 1" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 2" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 3" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 1" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 2" className="sponsor-logo" />
-                    <img src={google} alt="Sponsor 3" className="sponsor-logo" />
-                </div>
-            </div>
-            */}
            <Footer />
         </div>
         
