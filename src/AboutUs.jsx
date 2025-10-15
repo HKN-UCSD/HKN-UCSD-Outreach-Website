@@ -7,6 +7,16 @@ import Footer from "./components/Footer";
 
 
 export default function AboutUs() {
+    const scroll = (direction) => {
+        const container = document.getElementById("scroll-container");
+        if (container) {
+            const amount = 190;
+            container.scrollBy({
+            left: direction === "left" ? -amount : amount,
+            behavior: "smooth",
+            });
+        }
+        };
 
     return (
         <div className = "page-container">
@@ -46,62 +56,65 @@ export default function AboutUs() {
 
                 <h1 className = "sub-team">Our Outreach <span className = "highlight">Chairs</span></h1>
 
-                <div className = "roles">
-                    
-                    <ProfileCard
-                    name="Lucas
-                    Javier"
-                    position="Professional Outreach"
-                    email="lujavier@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/lucasjavier1/"
-                    isVP = {false}
-                    />
+                <div className="scroll-wrapper">
+                    <button className="scroll-btn left" onClick={() => scroll("left")}>
+                        &#10094;
+                    </button>
 
-                    <ProfileCard
-                    name="Esther
-                    Chung"
-                    position="Professional Outreach"
-                    email="esc005@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/estherchung1/"
-                    isVP = {false}
-                    />
+                    <div className="roles scroll-container" id="scroll-container">
+                        <ProfileCard
+                        name="Lucas Javier"
+                        position="Professional Outreach"
+                        email="lujavier@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/lucasjavier1/"
+                        isVP={false}
+                        />
 
-                    <ProfileCard
-                    name="Bianca
-                    Grunbaum"
-                    position="Professional Outreach"
-                    email="bgrunbaum@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/biancagrunbaum/"
-                    isVP = {false}
-                    />
+                        <ProfileCard
+                        name="Esther Chung"
+                        position="Professional Outreach"
+                        email="esc005@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/estherchung1/"
+                        isVP={false}
+                        />
 
-                    <ProfileCard
-                    name="Amrit
-                    Chahal"
-                    position="ECE Outreach"
-                    email="amchahal@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/amrit-chahal-455a3b243/"
-                    isVP = {false}
-                    />
+                        <ProfileCard
+                        name="Bianca Grunbaum"
+                        position="Professional Outreach"
+                        email="bgrunbaum@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/biancagrunbaum/"
+                        isVP={false}
+                        />
 
-                    <ProfileCard
-                    name="Andrew
-                    Jeter"
-                    position="CSE Outreach"
-                    email="ajeter@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/andrewcjeter/"
-                    isVP = {false}
-                    />
+                        <ProfileCard
+                        name="Amrit Chahal"
+                        position="ECE Outreach"
+                        email="amchahal@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/amrit-chahal-455a3b243/"
+                        isVP={false}
+                        />
 
-                    <ProfileCard
-                    name="Sara
-                    Chowdhury"
-                    position="MAE Outreach"
-                    email="stchowdhury@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/sara-chowdhury-stc101/"
-                    isVP = {false}
-                    />
-                </div>
+                        <ProfileCard
+                        name="Andrew Jeter"
+                        position="CSE Outreach"
+                        email="ajeter@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/andrewcjeter/"
+                        isVP={false}
+                        />
+
+                        <ProfileCard
+                        name="Sara Chowdhury"
+                        position="MAE Outreach"
+                        email="stchowdhury@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/sara-chowdhury-stc101/"
+                        isVP={false}
+                        />
+                    </div>
+
+                    <button className="scroll-btn right" onClick={() => scroll("right")}>
+                        &#10095;
+                    </button>
+                    </div>
 
                
             </div>
