@@ -34,6 +34,56 @@
     margin-top: 30px;
 }
 
+.scroll-wrapper {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  gap: 4rem;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background-color 0.2s;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-btn.left {
+  left: -2rem;
+}
+
+.scroll-btn.right {
+  right: -2rem;
+}
+
 .sub-team{
     font-size: 2rem;
     font-weight: bold;
