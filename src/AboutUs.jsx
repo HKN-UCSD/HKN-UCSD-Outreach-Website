@@ -35,22 +35,20 @@ export default function AboutUs() {
             <div className = "team">
                 <h1 className = "sub-team">Our Outreach <span className = "highlight">Leads</span></h1>
                 <div className = "roles">
-                    <ProfileCard
-                    name="Karina
-                    Zambani"
-                    position="VP of Professional Outreach"
-                    email="kzambani@ucsd.edu"
-                    linkedin=""
-                    isVP = {true}
+		    <ProfileCard
+                    name="Bianca Grunbaum"
+                    position="Professional Outreach"
+                    email="bgrunbaum@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/biancagrunbaum/"
+                    isVP={true}
                     />
-
-                    <ProfileCard
-                    name="Collin
-                    Whamsley"
-                    position="VP of Academic Outreach"
-                    email="cowalmsley@ucsd.edu"
-                    linkedin="https://www.linkedin.com/in/collin-walmsley/"
-                    isVP = {true}
+			
+		    <ProfileCard
+                    name="Riya Fernando"
+                    position="Academic Outreach"
+                    email="rfernando@ucsd.edu"
+                    linkedin="https://www.linkedin.com/in/riyafernando"
+                    isVP={true}
                     />
                 </div>
 
@@ -63,50 +61,50 @@ export default function AboutUs() {
 
                     <div className="roles scroll-container" id="scroll-container">
                         <ProfileCard
-                        name="Lucas Javier"
+                        name="Dakota Barnhardt"
                         position="Professional Outreach"
-                        email="lujavier@ucsd.edu"
-                        linkedin="https://www.linkedin.com/in/lucasjavier1/"
+                        email="dbarnhardt@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/dakota-barnhardt"
                         isVP={false}
                         />
 
                         <ProfileCard
-                        name="Esther Chung"
+                        name="Esther Choi"
                         position="Professional Outreach"
                         email="esc005@ucsd.edu"
-                        linkedin="https://www.linkedin.com/in/estherchung1/"
+                        linkedin="https://www.linkedin.com/in/estherchung1"
                         isVP={false}
                         />
 
                         <ProfileCard
-                        name="Bianca Grunbaum"
+                        name="Shreya Kashyap"
                         position="Professional Outreach"
-                        email="bgrunbaum@ucsd.edu"
-                        linkedin="https://www.linkedin.com/in/biancagrunbaum/"
+                        email="shkashyap@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/shreya-kashyap-4700a9383"
                         isVP={false}
                         />
-
+                        
                         <ProfileCard
-                        name="Amrit Chahal"
+                        name="Chika Inagaki"
                         position="ECE Outreach"
-                        email="amchahal@ucsd.edu"
-                        linkedin="https://www.linkedin.com/in/amrit-chahal-455a3b243/"
+                        email="cinagaki@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/chika-inagaki-4a5ba8324/"
                         isVP={false}
                         />
 
                         <ProfileCard
-                        name="Andrew Jeter"
+                        name="Siyona Sinha"
                         position="CSE Outreach"
-                        email="ajeter@ucsd.edu"
-                        linkedin="https://www.linkedin.com/in/andrewcjeter/"
+                        email="sis016@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/siyona-s-2763a4318/"
                         isVP={false}
                         />
 
-                        <ProfileCard
-                        name="Sara Chowdhury"
+			            <ProfileCard
+                        name="Felix Gil"
                         position="MAE Outreach"
-                        email="stchowdhury@ucsd.edu"
-                        linkedin="https://www.linkedin.com/in/sara-chowdhury-stc101/"
+                        email="f1gil@ucsd.edu"
+                        linkedin="https://www.linkedin.com/in/felix-gil-38872729b/"
                         isVP={false}
                         />
                     </div>
