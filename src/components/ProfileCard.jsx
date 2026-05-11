@@ -5,7 +5,7 @@ import linkedin from "../assets/linkedin.svg";
 
 const ProfileCard = ({ name, position, email, linkedin: linkedinUrl, isVP }) => {
   const base = import.meta.env.BASE_URL || "/"; // "/" in dev, "/repo-name/" on GH Pages, etc.
-  const prefix = isVP ? "/profile/leads/" : "/profile/chairs/";
+  const prefix = isVP ? "profile/leads/" : "profile/chairs/";
   const imageName = name.toLowerCase().replace(/\s+/g, "") + ".jpeg";
   const imageSrc = `${base}${prefix}${imageName}`;
 
